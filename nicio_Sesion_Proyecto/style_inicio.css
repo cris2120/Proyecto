@@ -1,0 +1,146 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo */
+body {
+  font-family: Arial, sans-serif;
+  background: url(fon_inicio/fondo_inicio.jpeg)no-repeat center center/cover;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(255,255,255,0.8);
+}
+
+header h1 {
+  color: #7c3aed;
+}
+
+nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+}
+
+/* FORMULARIO */
+.formulario_inicio_de_sesion {
+  width: 90%;
+  max-width: 400px;
+  margin: 40px auto;
+
+  padding: 25px;
+  border-radius: 15px;
+
+  background: rgba(255,255,255,0.9);
+  border: 2px solid #d291ff;
+
+  box-shadow: 0 10px 25px rgba(210,145,255,0.4);
+}
+
+/* TITULO */
+.formulario_inicio_de_sesion h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #7c3aed;
+}
+
+/* CAMPOS */
+.formulario_inicio_de_sesion div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* CHECKBOX Y LINK */
+.formulario_inicio_de_sesion div:nth-child(4) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.formulario_inicio_de_sesion a {
+  text-decoration: none;
+  color: #7c3aed;
+}
+
+.formulario_inicio_de_sesion a:hover {
+  text-decoration: underline;
+}
+
+/* BOTONES */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* BOTON PRINCIPAL */
+.boton_inicio_de_sesion {
+  background: #c084fc;
+  color: white;
+}
+
+/* BOTON REGISTRO */
+.boton_registro {
+  background: #f9a8d4;
+  color: white;
+}
+
+/* HOVER */
+button:hover {
+  opacity: 0.9;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .formulario_inicio_de_sesion {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  /* Recuérdame y link en columna */
+  .formulario_inicio_de_sesion div:nth-child(4) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
