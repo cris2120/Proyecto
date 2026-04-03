@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Mi Empresa</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="cuerpo">
+
+    <!-- barra d menu -->
+    <header class="barra">
+        <h1 class="nombre_empresa">Marqueza C</h1>
+        <!--enlaces de la barra de menu-->
+        <nav class="navegador">
+            <ul class="lista">
+                <li><a class="enlaces" href="#">Cotizaciones</a></li>
+                <li><a class="enlaces" href="#">Pedidos</a></li>
+                <li><a class="enlaces" href="#">Insumos</a></li>
+                <li><a class="enlaces" href="#">Productos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- FORMULARIO -->
+    <form class="formulario_Registro" id="formulario">
+
+        <h2 class="tiulo">Registro</h2>
+        <!--preguntas del registro-->
+        <input type="text" class="preguntas" placeholder="Ingrese usuario" id="usuario">
+        <input type="password" class="preguntas" placeholder="Ingrese contraseña" id="password">
+        <input type="password" class="preguntas" placeholder="Ingrese contraseña nuevamente" id="password2">
+
+        <!--boton de registro-->
+        <button type="submit" class="btn_Registar" id="btnregistrar">Registrar</button>
+
+        <a class="enlace" href="#">Ya estoy Registrado</a>
+
+        <!--mensaje de como resulto el registro -->
+        <p id="mensaje"></p>
+
+    </form>
+    <script>
+        let form = document.getElementById("formulario");
+        //para que 
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let usuario = document.getElementById("usuario").value;
+            let password = document.getElementById("password").value;
+            let password2 = document.getElementById("password2").value;
+            let mensaje = document.getElementById("mensaje");
+            //si no se llena bien el formulario , muestra error
+            if (usuario === "" || password === "" || password2 === "") {
+                mensaje.innerHTML = "Todos los campos son obligatorios";
+                mensaje.className = "error";
+                return;
+            }
+            //si las contraseñas no considen muestra error
+            if (password !== password2) {
+                mensaje.innerHTML = "Las contraseñas no coinciden";
+                mensaje.className = "error";
+                return;
+            }
+
+            // Guardar en localStorage
+            let usuarioObj = {
+                usuario: usuario,
+                password: password
+            };
+
+            localStorage.setItem("usuario", JSON.stringify(usuarioObj));
+
+            mensaje.innerHTML = "Registro exitoso ✅";
+            mensaje.className = "exito";
+
+            form.reset();
+        });
+    </script>
+
+</body>
+
+</html>
